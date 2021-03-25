@@ -3,5 +3,5 @@ torchaudio>=0.6.0
 numpy
 scipy
 scikit-learn
-tqdm
-pyyaml
+PyYAML==5.4.1
+tqdm==4.59.0
