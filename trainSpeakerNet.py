@@ -14,7 +14,8 @@ from SpeakerNet import *
 from DatasetLoader import get_data_loader
 import torch.distributed as dist
 import torch.multiprocessing as mp
-
+from tqdm.contrib.telegram import tqdm, trange
+import time
 # ## ===== ===== ===== ===== ===== ===== ===== =====
 # ## Parse arguments
 # ## ===== ===== ===== ===== ===== ===== ===== =====
@@ -186,7 +187,7 @@ def main_worker(gpu, ngpus_per_node, args):
             f.write('%s'%args)
 
     ## Core training script
-    for it in range(it,args.max_epoch+1):
+    for it in tqdm(range(it,args.max_epoch+1), token='1743850525:AAHSAuTeZHBF0Y0tNymhQBYJQvDKAhFEM9M', chat_id='1494865372'):
 
         clr = [x['lr'] for x in trainer.__optimizer__.param_groups]
 
