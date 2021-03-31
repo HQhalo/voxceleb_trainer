@@ -169,9 +169,7 @@ if __name__ == "__main__":
 	if args.augment:
 		download(args,augfiles)
 		part_extract(args,os.path.join(args.save_path,'rirs_noises.zip'),['RIRS_NOISES/simulated_rirs/mediumroom','RIRS_NOISES/simulated_rirs/smallroom'])
-		full_extract(args,os.path.join(args.save_path,'musan.tar.gz'))
-		split_musan(args)
-
+		
 	if args.download:
 		download(args,fileparts)
 
