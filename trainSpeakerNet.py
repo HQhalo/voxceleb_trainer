@@ -168,6 +168,17 @@ def main_worker(gpu, ngpus_per_node, args):
         c_fa = 1
 
         fnrs, fprs, thresholds = ComputeErrorRates(sc, lab)
+        
+         sc_np = numpy.array(sc)
+        lab_np = numpy.array(lab)
+        print("len of thresholds {}".format(len(thresholds)))
+        m = -1
+        for th in thresholds:
+          temp = (1*((sc_np > th) == lab_np)).mean()
+          if m < temp:
+            m = temp
+        print("max predict {}".format(m))
+        
         mindcf, threshold = ComputeMinDcf(fnrs, fprs, thresholds, p_target, c_miss, c_fa)
 
         print('EER %2.4f MinDCF %.5f'%(result[1],mindcf))
