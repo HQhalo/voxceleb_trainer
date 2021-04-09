@@ -5,3 +5,4 @@ scipy
 scikit-learn
 tqdm==4.59.0 
 flask
+wget
