@@ -70,7 +70,7 @@ args = parser.parse_args()
 #   Load Model
 #
 def loadParameters(path, model):
-    if !os.path.isfile(path):
+    if not os.path.isfile(path):
         url = 'http://www.robots.ox.ac.uk/~joon/data/baseline_v2_ap.model'
         wget.download(url, '/app/baseline_v2_ap.model')
     self_state = model.module.state_dict()
