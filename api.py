@@ -16,6 +16,7 @@ if not os.path.isdir(AUDIO_STORAGE):
 import timeit
 from DatasetLoader import loadWAV
 from SpeakerNet import *
+import wget
 
 # ===========================================
 #        Parse the argument
@@ -69,7 +70,9 @@ args = parser.parse_args()
 #   Load Model
 #
 def loadParameters(path, model):
-
+    if !os.path.isfile(path):
+        url = 'http://www.robots.ox.ac.uk/~joon/data/baseline_v2_ap.model'
+        wget.download(url, '/app/baseline_v2_ap.model')
     self_state = model.module.state_dict()
     loaded_state = torch.load(path, map_location="cpu")
     for name, param in loaded_state.items():
