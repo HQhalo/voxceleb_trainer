@@ -53,7 +53,7 @@ class SpeakerNet(nn.Module):
             return nloss, prec1
 
 class SpeakerNetCpu(SpeakerNet):
-     def __init__(self, model, optimizer, trainfunc, nPerSpeaker, **kwargs):
+    def __init__(self, model, optimizer, trainfunc, nPerSpeaker, **kwargs):
         super(SpeakerNet, self).__init__();
 
         SpeakerNetModel = importlib.import_module('models.'+model).__getattribute__('MainModel')
