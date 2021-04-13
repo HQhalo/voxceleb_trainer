@@ -209,12 +209,12 @@ def main_worker(gpu, ngpus_per_node, args):
         if it % args.test_interval == 0 and args.gpu == 0:
 
             ## Perform evaluation only in single GPU training
-            if not args.distributed:
-                sc, lab, _ = trainer.evaluateFromList(**vars(args))
-                result = tuneThresholdfromScore(sc, lab, [1, 0.1]);
+#             if not args.distributed:
+#                 sc, lab, _ = trainer.evaluateFromList(**vars(args))
+#                 result = tuneThresholdfromScore(sc, lab, [1, 0.1]);
 
-                print("IT %d, VEER %2.4f"%(it, result[1]));
-                scorefile.write("IT %d, VEER %2.4f\n"%(it, result[1]));
+#                 print("IT %d, VEER %2.4f"%(it, result[1]));
+#                 scorefile.write("IT %d, VEER %2.4f\n"%(it, result[1]));
 
             trainer.saveParameters(args.model_save_path+"/model%09d.model"%it);
 
