@@ -169,7 +169,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
         fnrs, fprs, thresholds = ComputeErrorRates(sc, lab)
         
-         sc_np = numpy.array(sc)
+        sc_np = numpy.array(sc)
         lab_np = numpy.array(lab)
         print("len of thresholds {}".format(len(thresholds)))
         m = -1
