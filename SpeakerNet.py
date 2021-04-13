@@ -138,7 +138,7 @@ class ModelTrainer(object):
 
 
             loss    += nloss.detach().cpu();
-            top1    += prec1.detach().cpu()
+            top1    += prec1
             counter += 1;
             index   += stepsize;
 
